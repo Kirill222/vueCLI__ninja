@@ -3,13 +3,14 @@
         <div class="modal" :class="{sale: theme===sale}">
             <h1>{{header}}</h1>
             <p>{{text}}</p>
+            <button @click="closemodal">Close modal</button>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['header', 'text', 'theme'] //here we accept props
+        props: ['header', 'text', 'theme', 'closemodal'] //here we accept props
     }
 </script>
 

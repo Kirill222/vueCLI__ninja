@@ -2,9 +2,11 @@
   <h1>{{title}}</h1>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
+  <Modal />
 </template>
 
 <script>
+import Modal from './components/Modal.vue'
 
 export default {
   name: 'App', 
@@ -18,6 +20,9 @@ export default {
       console.log(this.$refs.name.value)
       this.title = this.$refs.name.value
     }
+  },
+  components: {
+    Modal,
   }
 }
 </script>

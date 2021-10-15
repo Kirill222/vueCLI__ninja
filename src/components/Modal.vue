@@ -1,16 +1,20 @@
 <template>
-    <div class="backdrop">
+    <div class="backdrop" @click="closeModal">
         <div class="modal" :class="{sale: theme===sale}">
             <h1>{{header}}</h1>
-            <p>{{text}}</p>
-            <button @click="closemodal">Close modal</button>
+            <p>{{text}}</p>            
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['header', 'text', 'theme', 'closemodal'] //here we accept props
+        props: ['header', 'text', 'theme'], //here we accept props
+        methods: {
+            closeModal() {
+                this.$emit('close')  //custom event that we can call as we wish
+            }
+        }
     }
 </script>
 

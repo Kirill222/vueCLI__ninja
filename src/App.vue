@@ -3,7 +3,14 @@
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
   <div v-if="showModal">
-    <Modal :header="header" :text="text" :theme="sale" @close="toggleModal" />
+    <Modal :theme="sale" @close="toggleModal">
+      <template v-slot:links>
+        <a href="#">sign up now</a>
+        <a href="#">more info</a>
+      </template>
+      <h1>Hi</h1>
+      <p>Hello friends!!!</p>
+    </Modal>
   </div>
   <br>
   <button @click.alt="toggleModal">Show Modal (alt)</button>

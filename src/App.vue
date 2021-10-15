@@ -2,7 +2,7 @@
   <h1>{{title}}</h1>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
-  <Modal />
+  <Modal :header="header" :text="text" :theme="sale" />
 </template>
 
 <script>
@@ -19,6 +19,12 @@ export default {
     handleClick() {
       console.log(this.$refs.name.value)
       this.title = this.$refs.name.value
+    }
+  },
+  data() {
+    return {
+      header: 'Sign up',
+      text: 'You are awesome!!!',
     }
   },
   components: {
